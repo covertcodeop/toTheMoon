@@ -10,5 +10,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface HelloScene : SKScene
-
+@property BOOL contentCreated;
 @end
