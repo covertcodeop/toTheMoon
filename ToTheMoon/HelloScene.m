@@ -17,6 +17,7 @@
     NSMutableArray *deviceIDs;
     SensiBot *sensibot;
     BOOL connected;
+    SKSpriteNode *hull;
 }
 
 -(void)didMoveToView:(SKView *)view
@@ -96,7 +97,7 @@
 
 -(SKSpriteNode *)newSpaceShip
 {
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
+    hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
     SKSpriteNode *light1 = [self newLight];
     light1.position = CGPointMake(-28.0, 6.0);
     [hull addChild:light1];
@@ -112,8 +113,8 @@
                                            [SKAction moveByX:100 y:50.0 duration:1.0],
                                            [SKAction waitForDuration: 1.0],
                                            [SKAction moveByX:-100.0 y:-50.0 duration:1.0]]];
-                       
-    [hull runAction: [SKAction repeatActionForever:hover]];
+    
+    //[hull runAction: [SKAction repeatActionForever:hover]];
     return hull;
 }
 
@@ -202,6 +203,12 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 //    sensibot.accelX;
 //    tempValue.text = [NSString stringWithFormat:@"%f", sensibot.temperature];
     NSLog(@"%@",[NSString stringWithFormat:@"(X,Y,Z) = (%.3f,%.3f,%.3f)", sensibot.accelX, sensibot.accelY, sensibot.accelZ]);
+    
+    if(hull != nil)
+    {
+        SKAction *hover = [SKAction moveByX:10 y:0.0 duration:0.1];
+        [hull runAction: hover];
+    }
 //    lightValue.text = [NSString stringWithFormat:@"%f", sensibot.lux];
 //    soundValue.text = [NSString stringWithFormat:@"%f", sensibot.db];
 }
