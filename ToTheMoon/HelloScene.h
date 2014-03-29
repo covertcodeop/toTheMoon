@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "RBL_BLE_Delegate.h"
 
-@interface HelloScene : SKScene
+@interface HelloScene : SKScene <RBL_BLE_Delegate>
 @property BOOL contentCreated;
 @end

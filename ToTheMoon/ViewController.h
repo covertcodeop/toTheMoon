@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "RBL_BLE_Delegate.h"
 
-@interface ViewController : UIViewController <RBL_BLE_Delegate>
+@interface ViewController : UIViewController
 
 @end
