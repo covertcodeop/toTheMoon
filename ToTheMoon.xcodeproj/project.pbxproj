@@ -23,6 +23,7 @@
 		4835FA1518E73129001DD556 /* ToTheMoonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA1418E73129001DD556 /* ToTheMoonTests.m */; };
 		4835FA1F18E73472001DD556 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835FA1E18E73472001DD556 /* SpriteKit.framework */; };
 		4835FA2218E73751001DD556 /* HelloScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA2118E73751001DD556 /* HelloScene.m */; };
+		4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA2418E73F76001DD556 /* SpaceShipScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		4835FA1E18E73472001DD556 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		4835FA2018E73751001DD556 /* HelloScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloScene.h; sourceTree = "<group>"; };
 		4835FA2118E73751001DD556 /* HelloScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloScene.m; sourceTree = "<group>"; };
+		4835FA2318E73F76001DD556 /* SpaceShipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShipScene.h; sourceTree = "<group>"; };
+		4835FA2418E73F76001DD556 /* SpaceShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				4835F9FF18E73129001DD556 /* ViewController.m */,
 				4835FA2018E73751001DD556 /* HelloScene.h */,
 				4835FA2118E73751001DD556 /* HelloScene.m */,
+				4835FA2318E73F76001DD556 /* SpaceShipScene.h */,
+				4835FA2418E73F76001DD556 /* SpaceShipScene.m */,
 				4835FA0118E73129001DD556 /* Images.xcassets */,
 				4835F9F018E73129001DD556 /* Supporting Files */,
 			);
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4835FA0018E73129001DD556 /* ViewController.m in Sources */,
+				4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */,
 				4835FA2218E73751001DD556 /* HelloScene.m in Sources */,
 				4835F9FA18E73129001DD556 /* AppDelegate.m in Sources */,
 				4835F9F618E73129001DD556 /* main.m in Sources */,
