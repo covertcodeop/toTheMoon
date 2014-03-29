@@ -121,4 +121,12 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     rock.physicsBody.usesPreciseCollisionDetection = YES;
     [self addChild:rock];
 }
+
+-(void)didSimulatePhysics
+{
+    [self enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode *node, BOOL *stop) {
+        if(node.position.y < 0)
+            [node removeFromParent];
+    }];
+}
 @end
