@@ -15,14 +15,17 @@
 {
     RBL_BLE *bluetooth;
     NSMutableArray *deviceIDs;
+    SensiBot *sensibot;
+    BOOL connected;
 }
 
 -(void)didMoveToView:(SKView *)view
 {
+    connected = NO;
     deviceIDs = [[NSMutableArray alloc] initWithCapacity:2];
     
     bluetooth = [[RBL_BLE alloc] init];
-    bluetooth.list_delegate = self;
+    bluetooth.detail_delegate = self;
     [bluetooth startup];
 
     if(!self.contentCreated)
@@ -60,8 +63,18 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [bluetooth findBLEPeripherals:2];
-    
+ 
+    if(!connected)
+    {
+        [bluetooth findBLEPeripherals:2];
+    }
+    else
+    {
+        if(sensibot != nil)
+        {
+            [sensibot toggleAccelerometer:YES];
+        }        
+    }
     SKNode *helloNode = [self childNodeWithName:@"helloNode"];
     if(helloNode != nil)
     {
@@ -154,12 +167,15 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 }
 -(void) bleDidConnect:(NSUUID *) identifier
 {
+    connected = YES;
     NSLog(@"Adding peripheral %@ to table", [identifier UUIDString]);
     
     
     //if the device disconnects, then reconnects, and changes its name, this will not pick it up
     if([deviceIDs indexOfObject:identifier] == NSNotFound)
     {
+        NSLog(@"Got here");
+        sensibot = [bluetooth.sensibots objectForKey:identifier];
         /*       // Tell the tableView we're going to add (or remove) items.
          [self.tableView beginUpdates];
          // Add an item to the array.
@@ -181,9 +197,20 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     }
     
 }
+-(void) bleDidReceiveData
+{
+//    sensibot.accelX;
+//    tempValue.text = [NSString stringWithFormat:@"%f", sensibot.temperature];
+    NSLog(@"%@",[NSString stringWithFormat:@"(X,Y,Z) = (%.3f,%.3f,%.3f)", sensibot.accelX, sensibot.accelY, sensibot.accelZ]);
+//    lightValue.text = [NSString stringWithFormat:@"%f", sensibot.lux];
+//    soundValue.text = [NSString stringWithFormat:@"%f", sensibot.db];
+}
+
 -(void) bleDidDisconnect:(NSUUID *) identifier
 {
     NSLog(@"Removing peripheral %@ from table", [identifier UUIDString]);
+    connected = NO;
+    //sensibot = nil;
     
     NSUInteger location = [deviceIDs indexOfObject:identifier];
     
