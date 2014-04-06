@@ -206,7 +206,15 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     
     if(hull != nil)
     {
-        SKAction *hover = [SKAction moveByX:10 y:0.0 duration:0.1];
+        SKAction *hover;
+        if(sensibot.accelY > 0)
+        {
+            hover = [SKAction moveByX:1 y:0.0 duration:0.1];
+        }
+        else
+        {
+            hover = [SKAction moveByX:-1 y:0.0 duration:0.1];
+        }
         [hull runAction: hover];
     }
 //    lightValue.text = [NSString stringWithFormat:@"%f", sensibot.lux];
