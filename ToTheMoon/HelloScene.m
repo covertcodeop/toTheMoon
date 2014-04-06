@@ -68,14 +68,8 @@
     if(!connected)
     {
         [bluetooth findBLEPeripherals:2];
-    }
-    else
-    {
-        if(sensibot != nil)
-        {
-            [sensibot toggleAccelerometer:YES];
-        }        
-    }
+    };
+
     SKNode *helloNode = [self childNodeWithName:@"helloNode"];
     if(helloNode != nil)
     {
@@ -171,7 +165,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     connected = YES;
     NSLog(@"Adding peripheral %@ to table", [identifier UUIDString]);
     
-    
     //if the device disconnects, then reconnects, and changes its name, this will not pick it up
     if([deviceIDs indexOfObject:identifier] == NSNotFound)
     {
@@ -197,6 +190,24 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
          */
     }
     
+}
+-(void) bleDidFinishedConnecting:(NSUUID *) identifier
+{
+    NSString * idString = [identifier UUIDString];
+    if([idString caseInsensitiveCompare:@SPACE_SHIP_BOT] == NSOrderedSame)
+    {
+        NSLog(@"Space Ship bot joining");
+        [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleAccelerometer:YES];
+
+/*        [self.sbDetailButton setEnabled:YES];
+        [self.sbDetailButton setImage: [UIImage imageNamed:@"avatar_sound_on.png"] forState:UIControlStateNormal];
+        [self.sbBuzzer setEnabled:YES];
+        [self.sbLED setEnabled:YES];
+        [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SOUND_BOT]] toggleSound:YES];
+        [self.sbValue setEnabled:YES];
+        [self.sbGraph startAnimating];
+*/
+    }
 }
 -(void) bleDidReceiveData
 {

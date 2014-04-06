@@ -13,6 +13,7 @@
 @required
 -(void) bleFinishedScanning;
 -(void) bleDidConnect:(NSUUID *) identifier;
+-(void) bleDidFinishedConnecting:(NSUUID *) identifier;
 -(void) bleDidDisconnect:(NSUUID *) identifier;
 
 @optional

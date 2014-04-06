@@ -169,6 +169,9 @@
     
     [peripheral readValueForCharacteristic:[temp.characteristics objectForKey:[CBUUID UUIDWithString:@BLE_DEVICE_VENDOR_NAME_UUID]]];
     [peripheral readValueForCharacteristic:[temp.characteristics objectForKey:[CBUUID UUIDWithString:@BLE_DEVICE_LIB_VERSION_UUID]]];
+    
+    //[[self list_delegate] bleDidFinishedConnecting:peripheral.identifier];
+    [[self detail_delegate] bleDidFinishedConnecting:peripheral.identifier];
 }
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {

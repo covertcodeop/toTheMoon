@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+//SpaceShip Controller
+#define SPACE_SHIP_BOT            "25FD5F63-4EAB-292F-9AEC-3D6840FBD8A4" //Elizabeth's space ship
+
+
 @interface SensiBot : NSObject
 
 //BLE Values on call
