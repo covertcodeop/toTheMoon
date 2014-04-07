@@ -40,7 +40,8 @@
 {
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    [self addChild: [self newHelloNode]];
+    //[self addChild: [self newHelloNode]];
+    [self addChild: [self newBackground]];
     
     SKSpriteNode *spaceship = [self newSpaceShip];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-150);
@@ -93,9 +94,19 @@
     }
 }
 
+-(SKSpriteNode *)newBackground
+{
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.png"];
+    background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+
+    return background;
+}
+
 -(SKSpriteNode *)newSpaceShip
 {
-    hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
+    //hull = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64, 32)];
+    hull = [SKSpriteNode spriteNodeWithImageNamed:@"ship.png"];
+    
     SKSpriteNode *light1 = [self newLight];
     light1.position = CGPointMake(-28.0, 6.0);
     [hull addChild:light1];
