@@ -68,6 +68,10 @@
     if(!connected)
     {
         [bluetooth findBLEPeripherals:2];
+    }
+    else
+    {
+        [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleAccelerometer:YES];
     };
 
     SKNode *helloNode = [self childNodeWithName:@"helloNode"];
@@ -218,13 +222,21 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     if(hull != nil)
     {
         SKAction *hover;
-        if(sensibot.accelY > 0)
+        if(sensibot.accelY > 5)
         {
-            hover = [SKAction moveByX:1 y:0.0 duration:0.1];
+            if(!(hull.position.x > 748))
+            {
+                NSLog(@"#############################################");
+                hover = [SKAction moveByX:-1 y:0.0 duration:0.1];
+            }
         }
         else
         {
-            hover = [SKAction moveByX:-1 y:0.0 duration:0.1];
+            if(!(hull.position.x < 0))
+            {
+                NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                hover = [SKAction moveByX:1 y:0.0 duration:0.1];
+            }
         }
         [hull runAction: hover];
     }

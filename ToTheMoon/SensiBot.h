@@ -10,7 +10,8 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 //SpaceShip Controller
-#define SPACE_SHIP_BOT            "25FD5F63-4EAB-292F-9AEC-3D6840FBD8A4" //Elizabeth's space ship
+//#define SPACE_SHIP_BOT            "25FD5F63-4EAB-292F-9AEC-3D6840FBD8A4" //Elizabeth's space ship
+#define SPACE_SHIP_BOT            "D325D9C4-4835-805C-865D-2BE9DAACDC53" //Zenko's bot
 
 
 @interface SensiBot : NSObject
