@@ -29,6 +29,8 @@
 		4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA2418E73F76001DD556 /* SpaceShipScene.m */; };
 		4847704418F2273600E5FF5B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704318F2273600E5FF5B /* bg.png */; };
 		4847704618F22B3300E5FF5B /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704518F22B3300E5FF5B /* ship.png */; };
+		489B8F7B196C9DC100EF281C /* avatar_prox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F79196C9DC100EF281C /* avatar_prox_off.png */; };
+		489B8F7C196C9DC100EF281C /* avatar_prox_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F7A196C9DC100EF281C /* avatar_prox_on.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		4835FA2418E73F76001DD556 /* SpaceShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipScene.m; sourceTree = "<group>"; };
 		4847704318F2273600E5FF5B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		4847704518F22B3300E5FF5B /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship.png; sourceTree = "<group>"; };
+		489B8F79196C9DC100EF281C /* avatar_prox_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_prox_off.png; sourceTree = "<group>"; };
+		489B8F7A196C9DC100EF281C /* avatar_prox_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_prox_on.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		4847704218F226FD00E5FF5B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				489B8F79196C9DC100EF281C /* avatar_prox_off.png */,
+				489B8F7A196C9DC100EF281C /* avatar_prox_on.png */,
 				4847704518F22B3300E5FF5B /* ship.png */,
 				4847704318F2273600E5FF5B /* bg.png */,
 			);
@@ -294,6 +300,8 @@
 				4847704618F22B3300E5FF5B /* ship.png in Resources */,
 				4835F9F418E73129001DD556 /* InfoPlist.strings in Resources */,
 				4847704418F2273600E5FF5B /* bg.png in Resources */,
+				489B8F7C196C9DC100EF281C /* avatar_prox_on.png in Resources */,
+				489B8F7B196C9DC100EF281C /* avatar_prox_off.png in Resources */,
 				4835F9FD18E73129001DD556 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
