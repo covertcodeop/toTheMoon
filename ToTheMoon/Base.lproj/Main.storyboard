@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="929" y="-249"/>
         </scene>
-        <!--View Controller - Connect-->
+        <!--Connect View Controller - Connect-->
         <scene sceneID="OUS-rf-9tN">
             <objects>
-                <viewController title="Connect" id="c1U-wd-c2i" sceneMemberID="viewController">
+                <viewController title="Connect" id="c1U-wd-c2i" customClass="ConnectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Sj-I8-X2T"/>
                         <viewControllerLayoutGuide type="bottom" id="6do-ud-OxH"/>
@@ -65,13 +65,26 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="KGO-Od-LcQ"/>
+                                    <action selector="connectBot:" destination="c1U-wd-c2i" eventType="touchUpInside" id="U2C-qL-umu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-XG-oZW" userLabel="SegueHelper">
+                                <rect key="frame" x="611" y="75" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" identifier="Associate" id="AOM-q0-JDL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rLp-Q7-29j"/>
+                    <connections>
+                        <outlet property="connectButton" destination="ZG3-18-7eJ" id="f5b-eg-zqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ig8-h5-Zs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
