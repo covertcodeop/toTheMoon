@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "HelloScene.h"
+#import "SensiBot.h"
+#import "RBL_BLE.h"
 
 @interface ViewController ()
 
@@ -15,6 +17,10 @@
 
 @implementation ViewController
 {
+    RBL_BLE *bluetooth;
+    NSUUID *toyIdentifier;
+    SensiBot *bot;
+    UIViewController *reconnectScreen;
 }
 - (void)viewDidLoad
 {
@@ -35,9 +41,18 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     HelloScene *hello = [[HelloScene alloc] initWithSize:CGSizeMake(768, 1024)];
+    [hello setBleRadio:bluetooth forDevice:toyIdentifier from:reconnectScreen];
     SKView *spriteView = (SKView *) self.view;
     
     [spriteView presentScene: hello];
+}
+
+-(void) setBleRadio: (RBL_BLE *) value forDevice: (NSUUID *) identifier from:(UIViewController *) connectScreen
+{
+    bluetooth = value;
+    toyIdentifier = identifier;
+    bot = [bluetooth.sensibots objectForKey:toyIdentifier];
+    reconnectScreen = connectScreen;
 }
 
 @end

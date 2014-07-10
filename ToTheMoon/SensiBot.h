@@ -11,7 +11,9 @@
 
 //SpaceShip Controller
 //#define SPACE_SHIP_BOT            "25FD5F63-4EAB-292F-9AEC-3D6840FBD8A4" //Elizabeth's space ship
-#define SPACE_SHIP_BOT            "D325D9C4-4835-805C-865D-2BE9DAACDC53" //Zenko's bot
+//#define SPACE_SHIP_BOT            "D325D9C4-4835-805C-865D-2BE9DAACDC53" //Zenko's bot
+#define SPACE_SHIP_BOT            "93A5EE4E-7521-7F38-ADE7-777636FF7CF1" //Prox bot (Mo)
+
 
 
 @interface SensiBot : NSObject
@@ -45,5 +47,6 @@
 -(void) toggleLight: (BOOL) enable;
 -(void) toggleSound: (BOOL) enable;
 -(void) toggleAccelerometer: (BOOL) enable;
+-(void) toggleProx: (BOOL) enable;
 
 @end

@@ -35,6 +35,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    bluetooth = [[RBL_BLE alloc] init];
+    [bluetooth startup];
+    bluetooth.list_delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,4 +72,40 @@
         [self performSegueWithIdentifier:@"Associate" sender:sender];
     }
 }
+
+/*
+ * RBL_BLE_Delegate
+ */
+
+-(void) bleFinishedScanning
+{
+    [self.connectButton setEnabled:YES];
+}
+-(void) bleDidConnect:(NSUUID *) identifier
+{
+    // Add an item to the array.
+    toyIdentifier = identifier;
+}
+-(void) bleDidFinishedConnecting:(NSUUID *) identifier
+{
+    NSLog(@"Bot joining!");
+    bot = [bluetooth.sensibots objectForKey:identifier];
+    [self.connectButton setImage: [UIImage imageNamed:@"avatar_prox_on.png"] forState:UIControlStateNormal];
+}
+-(void) bleDidDisconnect:(NSUUID *) identifier
+{
+    toyIdentifier = nil;
+    bot = nil;
+    [self.connectButton setImage: [UIImage imageNamed:@"avatar_prox_off.png"] forState:UIControlStateNormal];
+}
+
+-(void) bleDidUpdateRSSI:(NSNumber *) rssi
+{
+    
+}
+-(void) bleDidReceiveData
+{
+    NSLog(@"Receiving data on the Connect screen... not sure what's up.");
+}
+
 @end

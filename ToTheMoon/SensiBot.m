@@ -107,41 +107,44 @@
         [response.value getBytes:buffer length:response.value.length];
         UInt16 value;
 
-        switch(buffer[0])
+        for(int header = 0; header<response.value.length; header+=3)
         {
-            case 0x0B:
-                value = buffer[2] | buffer[1] << 8;
-                self.temperature = value;
-                NSLog(@"Temp Value: %i or %f", value, self.temperature);
-                break;
-            case 0x0C:
-                value = buffer[2] | buffer[1] << 8;
-                self.lux = value;
-                NSLog(@"Light Value: %i or %f", value, self.lux);
-                break;
-            case 0x0D:
-                value = buffer[2] | buffer[1] << 8;
-                self.db = value;
-                NSLog(@"Sound Value: %i or %f", value, self.db);
-                break;
-            case 0x0E:
-                value = buffer[2] | buffer[1] << 8;
-                self.accelX = value/1000.0;
-                NSLog(@"X accelerator: %i or %f", value, self.accelX);
-                break;
-            case 0x0F:
-                value = buffer[2] | buffer[1] << 8;
-                self.accelY = value/1000.0;
-                NSLog(@"Y accelerator: %i or %f", value, self.accelY);
-                break;
-            case 0x10:
-                value = buffer[2] | buffer[1] << 8;
-                self.accelZ = value/1000.0;
-                NSLog(@"Z accelerator: %i or %f", value, self.accelZ);
-                break;
-            default:
-                NSLog(@"Did not recognize byte header");
-                break;
+            switch(buffer[header])
+            {
+                /*case 0x0B:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.temperature = value;
+                    NSLog(@"Temp Value: %i or %f", value, self.temperature);
+                    break;
+                case 0x0C:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.lux = value;
+                    NSLog(@"Light Value: %i or %f", value, self.lux);
+                    break;
+                case 0x0D:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.db = value;
+                    NSLog(@"Sound Value: %i or %f", value, self.db);
+                    break;*/
+                case 0x0E:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.accelX = value/1000.0;
+                    NSLog(@"X accelerator: %i or %f", value, self.accelX);
+                    break;
+                case 0x0F:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.accelY = value/1000.0;
+                    NSLog(@"Y accelerator: %i or %f", value, self.accelY);
+                    break;
+                case 0x10:
+                    value = buffer[header+2] | buffer[header+1] << 8;
+                    self.accelZ = value/1000.0;
+                    NSLog(@"Z accelerator: %i or %f", value, self.accelZ);
+                    break;
+                default:
+                    NSLog(@"Did not recognize byte header");
+                    break;
+            }
         }
     }
         
@@ -192,6 +195,20 @@
 {
     NSLog(@"About to toggleAccelerometer!");
     UInt8 buf[3] = {0xA3, 0x00, 0x00};
+    
+    if (enable)
+        buf[1] = 0x01;
+    else
+        buf[1] = 0x00;
+    
+    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
+    CBUUID *temp = [CBUUID UUIDWithString:@TX_TO_BLE_DEVICE_UUID];
+    [peripheral writeValue:data forCharacteristic:[characteristics objectForKey:temp] type:CBCharacteristicWriteWithoutResponse];
+    
+}
+-(void) toggleProx: (BOOL) enable
+{
+    UInt8 buf[3] = {0xA4, 0x00, 0x00};
     
     if (enable)
         buf[1] = 0x01;
