@@ -188,20 +188,20 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     if(hull != nil)
     {
         SKAction *hover;
-        if(sensibot.accelY > 5)
+        if(sensibot.accelY > 35)
         {
             if(!(hull.position.x > 748))
             {
                 NSLog(@"#############################################");
-                hover = [SKAction moveByX:-1 y:0.0 duration:0.1];
+                hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
             }
         }
         else
         {
-            if(!(hull.position.x < 0))
+            if(!(hull.position.x < 5))
             {
                 NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                hover = [SKAction moveByX:1 y:0.0 duration:0.1];
+                hover = [SKAction moveByX:5 y:0.0 duration:0.1];
             }
         }
         [hull runAction: hover];
@@ -230,7 +230,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     toyIdentifier = identifier;
     sensibot = [bluetooth.sensibots objectForKey:toyIdentifier];
     reconnectScreen = connectScreen;
-    [bluetooth.detail_delegate self];
+    bluetooth.detail_delegate = self;
     connected = YES;
 }
 
