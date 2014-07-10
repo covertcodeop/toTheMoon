@@ -65,7 +65,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    SKNode *helloNode = [self childNodeWithName:@"helloNode"];
+/*    SKNode *helloNode = [self childNodeWithName:@"helloNode"];
     if(helloNode != nil)
     {
         helloNode.name = nil;
@@ -81,7 +81,7 @@
             SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0.5];
             [self.view presentScene:spaceshipScene transition:doors];
              }];
-    }
+    }*/
 }
 
 -(SKSpriteNode *)newBackground
@@ -155,6 +155,28 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
         if(node.position.y < 0)
             [node removeFromParent];
     }];
+    
+    if(hull != nil)
+    {
+        SKAction *hover;
+        if(sensibot.accelY > 35)
+        {
+            if(!(hull.position.x > 748))
+            {
+                NSLog(@"#############################################");
+                hover = [SKAction moveByX:5 y:0.0 duration:0.1];
+            }
+        }
+        else
+        {
+            if(!(hull.position.x < 5))
+            {
+                NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
+            }
+        }
+        [hull runAction: hover];
+    }
 }
 
 /*
@@ -185,27 +207,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 //    tempValue.text = [NSString stringWithFormat:@"%f", sensibot.temperature];
     NSLog(@"%@",[NSString stringWithFormat:@"(X,Y,Z) = (%.3f,%.3f,%.3f)", sensibot.accelX, sensibot.accelY, sensibot.accelZ]);
     
-    if(hull != nil)
-    {
-        SKAction *hover;
-        if(sensibot.accelY > 35)
-        {
-            if(!(hull.position.x > 748))
-            {
-                NSLog(@"#############################################");
-                hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
-            }
-        }
-        else
-        {
-            if(!(hull.position.x < 5))
-            {
-                NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                hover = [SKAction moveByX:5 y:0.0 duration:0.1];
-            }
-        }
-        [hull runAction: hover];
-    }
 }
 
 -(void) bleDidDisconnect:(NSUUID *) identifier
