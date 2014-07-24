@@ -164,7 +164,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
             if(!(hull.position.x > 748))
             {
                 NSLog(@"#############################################");
-                hover = [SKAction moveByX:5 y:0.0 duration:0.1];
+                hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
             }
         }
         else
@@ -172,7 +172,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
             if(!(hull.position.x < 5))
             {
                 NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
+                hover = [SKAction moveByX:5 y:0.0 duration:0.1];
             }
         }
         [hull runAction: hover];
