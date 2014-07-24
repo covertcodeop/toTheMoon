@@ -29,6 +29,7 @@
 		4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA2418E73F76001DD556 /* SpaceShipScene.m */; };
 		4847704418F2273600E5FF5B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704318F2273600E5FF5B /* bg.png */; };
 		4847704618F22B3300E5FF5B /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704518F22B3300E5FF5B /* ship.png */; };
+		487098E7198182AE00469723 /* ship_asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 487098E6198182AE00469723 /* ship_asteroid.png */; };
 		489B8F7B196C9DC100EF281C /* avatar_prox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F79196C9DC100EF281C /* avatar_prox_off.png */; };
 		489B8F7C196C9DC100EF281C /* avatar_prox_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F7A196C9DC100EF281C /* avatar_prox_on.png */; };
 		489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F7E196D8D6600EF281C /* ConnectViewController.m */; };
@@ -78,6 +79,7 @@
 		4835FA2418E73F76001DD556 /* SpaceShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipScene.m; sourceTree = "<group>"; };
 		4847704318F2273600E5FF5B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		4847704518F22B3300E5FF5B /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship.png; sourceTree = "<group>"; };
+		487098E6198182AE00469723 /* ship_asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship_asteroid.png; sourceTree = "<group>"; };
 		489B8F79196C9DC100EF281C /* avatar_prox_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_prox_off.png; sourceTree = "<group>"; };
 		489B8F7A196C9DC100EF281C /* avatar_prox_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_prox_on.png; sourceTree = "<group>"; };
 		489B8F7D196D8D6600EF281C /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		4847704218F226FD00E5FF5B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				487098E6198182AE00469723 /* ship_asteroid.png */,
 				489B8F79196C9DC100EF281C /* avatar_prox_off.png */,
 				489B8F7A196C9DC100EF281C /* avatar_prox_on.png */,
 				4847704518F22B3300E5FF5B /* ship.png */,
@@ -303,6 +306,7 @@
 			files = (
 				4835FA0218E73129001DD556 /* Images.xcassets in Resources */,
 				4847704618F22B3300E5FF5B /* ship.png in Resources */,
+				487098E7198182AE00469723 /* ship_asteroid.png in Resources */,
 				4835F9F418E73129001DD556 /* InfoPlist.strings in Resources */,
 				4847704418F2273600E5FF5B /* bg.png in Resources */,
 				489B8F7C196C9DC100EF281C /* avatar_prox_on.png in Resources */,

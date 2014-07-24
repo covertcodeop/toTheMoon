@@ -141,7 +141,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 
 -(void)addRock
 {
-    SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(8, 80)];
+    //SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(8, 80)];
+    SKSpriteNode *rock = [SKSpriteNode spriteNodeWithImageNamed:@"ship_asteroid.png"];
     rock.position = CGPointMake(skRand(0, self.size.width), self.size.height-50);
     rock.name = @"rock";
     rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
