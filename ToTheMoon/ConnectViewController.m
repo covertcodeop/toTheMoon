@@ -90,13 +90,13 @@
 {
     NSLog(@"Bot joining!");
     bot = [bluetooth.sensibots objectForKey:identifier];
-    [self.connectButton setImage: [UIImage imageNamed:@"avatar_prox_on.png"] forState:UIControlStateNormal];
+    [self.connectButton setImage: [UIImage imageNamed:@"avatar_on.png"] forState:UIControlStateNormal];
 }
 -(void) bleDidDisconnect:(NSUUID *) identifier
 {
     toyIdentifier = nil;
     bot = nil;
-    [self.connectButton setImage: [UIImage imageNamed:@"avatar_prox_off.png"] forState:UIControlStateNormal];
+    [self.connectButton setImage: [UIImage imageNamed:@"avatar_off.png"] forState:UIControlStateNormal];
 }
 
 -(void) bleDidUpdateRSSI:(NSNumber *) rssi

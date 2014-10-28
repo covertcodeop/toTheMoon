@@ -60,7 +60,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-18-7eJ">
                                 <rect key="frame" x="132" y="259" width="505" height="505"/>
-                                <state key="normal" image="avatar_prox_off.png">
+                                <state key="normal" image="avatar_off.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -90,7 +90,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar_prox_off.png" width="505" height="505"/>
+        <image name="avatar_off.png" width="190" height="184"/>
         <image name="bg.png" width="768" height="1024"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
