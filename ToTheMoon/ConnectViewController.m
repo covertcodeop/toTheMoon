@@ -18,9 +18,8 @@
 
 @implementation ConnectViewController
 {
-    RBL_BLE *bluetooth;
-    NSUUID *toyIdentifier;
-    SensiBot *bot;
+    RFduinoManager *rfduinoManager;
+    BOOL controllerConnected;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +34,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    bluetooth = [[RBL_BLE alloc] init];
-    [bluetooth startup];
-    bluetooth.list_delegate = self;
-
+    rfduinoManager = [RFduinoManager sharedRFduinoManager];
+    rfduinoManager.delegate = self;
+    controllerConnected = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,20 +50,20 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- //[bluetooth.listOfDelegates removeObjectForKey:[self class]];
+{
  
- [segue.destinationViewController setBleRadio:bluetooth forDevice:toyIdentifier from:self];
+ //[segue.destinationViewController setBleRadio:bluetooth forDevice:toyIdentifier from:self];
 }
 
 - (IBAction)connectBot:(id)sender
 {
-    if(toyIdentifier == nil)
+    if(!controllerConnected)
     {
         [self.connectButton setEnabled:NO];
-        [bluetooth findBLEPeripherals:2];
+        NSLog(@"Scanning for RFDuinos");
+        [rfduinoManager startScan];
+        const int timeOut = 2; //seconds
+        [NSTimer scheduledTimerWithTimeInterval:(float)timeOut target:self selector:@selector(scanTimer:) userInfo:nil repeats:NO];
     }
     else
     {
@@ -73,39 +71,48 @@
     }
 }
 
-/*
- * RBL_BLE_Delegate
- */
-
--(void) bleFinishedScanning
+-(void) scanTimer:(NSTimer *)timer
 {
+    [rfduinoManager stopScan];
     [self.connectButton setEnabled:YES];
+    NSLog(@"Finished scanning for RFDuinos");
 }
--(void) bleDidConnect:(NSUUID *) identifier
+
+/* RFduinoManager Delegate */
+- (void)didDiscoverRFduino:(RFduino *)rfduino
 {
-    // Add an item to the array.
-    toyIdentifier = identifier;
+    NSString *adData = [[NSString alloc] initWithData:rfduino.advertisementData encoding:NSASCIIStringEncoding];
+    NSLog(@"Found RFduino %@ - %@", rfduino.name, adData);
+    if([rfduino.name isEqualToString:@"DynePod"] &&  [adData isEqualToString:@"SSC"])
+    {
+        NSLog(@"Controller UUID %@", rfduino.UUID);
+        [rfduinoManager connectRFduino:rfduino];
+    }
 }
--(void) bleDidFinishedConnecting:(NSUUID *) identifier
+- (void)didUpdateDiscoveredRFduino:(RFduino *)rfduino
 {
-    NSLog(@"Bot joining!");
-    bot = [bluetooth.sensibots objectForKey:identifier];
+    NSLog(@"Update Discovered?");
+}
+- (void)didConnectRFduino:(RFduino *)rfduino
+{
+    NSLog(@"Controller connected");
+}
+- (void)didLoadServiceRFduino:(RFduino *)rfduino
+{
+    NSLog(@"Controller joining!");
+    controllerConnected = YES;
     [self.connectButton setImage: [UIImage imageNamed:@"avatar_on.png"] forState:UIControlStateNormal];
 }
--(void) bleDidDisconnect:(NSUUID *) identifier
+- (void)didDisconnectRFduino:(RFduino *)rfduino
 {
-    toyIdentifier = nil;
-    bot = nil;
+    NSLog(@"Controller disconnected");
+    controllerConnected = NO;
     [self.connectButton setImage: [UIImage imageNamed:@"avatar_off.png"] forState:UIControlStateNormal];
 }
-
--(void) bleDidUpdateRSSI:(NSNumber *) rssi
+/* RFduinoDelegate */
+- (void)didReceive:(NSData *)data;
 {
-    
-}
--(void) bleDidReceiveData
-{
-    NSLog(@"Receiving data on the Connect screen... not sure what's up.");
+    NSLog(@"Received the datas");
 }
 
 @end

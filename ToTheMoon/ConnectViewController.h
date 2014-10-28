@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RBL_BLE_Delegate.h"
+#import "RFduino.h"
+#import "RFduinoManager.h"
 
-@interface ConnectViewController : UIViewController <RBL_BLE_Delegate>
+@interface ConnectViewController : UIViewController <RFduinoManagerDelegate, RFduinoDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 
 @end

@@ -120,13 +120,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4806FECE18E75A7D009E4CDB /* SensiBots */ = {
+		4806FECE18E75A7D009E4CDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				4806FED018E75ACC009E4CDB /* SensiBot.m */,
 				4806FECF18E75AC4009E4CDB /* SensiBot.h */,
 			);
-			name = SensiBots;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		4806FEDA18E75CCC009E4CDB /* RBL_BLE */ = {
@@ -191,7 +191,7 @@
 				4847704218F226FD00E5FF5B /* Graphics */,
 				4830311519FFDB7D009EEA35 /* RFDuino */,
 				4806FEDA18E75CCC009E4CDB /* RBL_BLE */,
-				4806FECE18E75A7D009E4CDB /* SensiBots */,
+				4806FECE18E75A7D009E4CDB /* Controller */,
 				4835F9F818E73129001DD556 /* AppDelegate.h */,
 				4835F9F918E73129001DD556 /* AppDelegate.m */,
 				4835F9FB18E73129001DD556 /* Main.storyboard */,
