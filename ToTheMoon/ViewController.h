@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "RBL_BLE.h"
+#import "RFduinoManager.h"
 
 @interface ViewController : UIViewController
 
--(void) setBleRadio: (RBL_BLE *) value forDevice: (NSUUID *) identifier from:(UIViewController *) connectScreen;
+-(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen;
 
 @end

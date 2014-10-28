@@ -17,9 +17,7 @@
 
 @implementation ViewController
 {
-    RBL_BLE *bluetooth;
-    NSUUID *toyIdentifier;
-    SensiBot *bot;
+    RFduinoManager *bluetooth;
     UIViewController *reconnectScreen;
 }
 - (void)viewDidLoad
@@ -41,17 +39,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     HelloScene *hello = [[HelloScene alloc] initWithSize:CGSizeMake(768, 1024)];
-    [hello setBleRadio:bluetooth forDevice:toyIdentifier from:reconnectScreen];
+    [hello setBleRadio:bluetooth from:reconnectScreen];
     SKView *spriteView = (SKView *) self.view;
     
     [spriteView presentScene: hello];
 }
 
--(void) setBleRadio: (RBL_BLE *) value forDevice: (NSUUID *) identifier from:(UIViewController *) connectScreen
+-(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen
 {
     bluetooth = value;
-    toyIdentifier = identifier;
-    bot = [bluetooth.sensibots objectForKey:toyIdentifier];
     reconnectScreen = connectScreen;
 }
 

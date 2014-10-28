@@ -13,9 +13,7 @@
 
 @implementation HelloScene
 {
-    RBL_BLE *bluetooth;
-    NSUUID *toyIdentifier;
-    SensiBot *sensibot;
+    RFduinoManager *bluetooth;
     UIViewController *reconnectScreen;
     BOOL connected;
     SKSpriteNode *hull;
@@ -32,12 +30,12 @@
 
 -(void)createSceneContents
 {
-    if(sensibot != nil)
+/*    if(sensibot != nil)
     {
         [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleProx:NO];
         [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleAccelerometer:YES];
     }
-    
+*/    
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     //[self addChild: [self newHelloNode]];
@@ -160,7 +158,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     if(hull != nil)
     {
         SKAction *hover;
-        if(sensibot.accelY > 35)
+        //move hull based on accel
+        /*if(sensibot.accelY > 35)
         {
             if(!(hull.position.x > 748))
             {
@@ -177,63 +176,47 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
             }
         }
         [hull runAction: hover];
+        */
     }
 }
 
-/*
- * RBL_BLE_Delegate
- */
 
--(void) bleFinishedScanning
+/* RFduinoManager Delegate */
+- (void)didDiscoverRFduino:(RFduino *)rfduino
 {
-    NSLog(@"Connection timer finished");
+    NSLog(@"Found RFduino %@", rfduino.name);
 }
--(void) bleDidConnect:(NSUUID *) identifier
+- (void)didUpdateDiscoveredRFduino:(RFduino *)rfduino
 {
-    connected = YES;
-    NSLog(@"Adding peripheral %@ to table", [identifier UUIDString]);
+    NSLog(@"Update Discovered?");
 }
--(void) bleDidFinishedConnecting:(NSUUID *) identifier
+- (void)didConnectRFduino:(RFduino *)rfduino
 {
-    NSString * idString = [identifier UUIDString];
-    if([idString caseInsensitiveCompare:@SPACE_SHIP_BOT] == NSOrderedSame)
-    {
-        NSLog(@"Space Ship bot joining");
-        //[[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleAccelerometer:YES];
-    }
+    NSLog(@"Controller connected");
 }
--(void) bleDidReceiveData
+- (void)didLoadServiceRFduino:(RFduino *)rfduino
 {
-//    sensibot.accelX;
-//    tempValue.text = [NSString stringWithFormat:@"%f", sensibot.temperature];
-    NSLog(@"%@",[NSString stringWithFormat:@"(X,Y,Z) = (%.3f,%.3f,%.3f)", sensibot.accelX, sensibot.accelY, sensibot.accelZ]);
-    
+    NSLog(@"Controller joining!");
 }
-
--(void) bleDidDisconnect:(NSUUID *) identifier
+- (void)didDisconnectRFduino:(RFduino *)rfduino
 {
-    NSLog(@"Removing peripheral %@ from table", [identifier UUIDString]);
-    connected = NO;
-    sensibot = nil;
-    toyIdentifier = nil;
+    NSLog(@"Controller disconnected");
+    rfduino.delegate = nil;
+    bluetooth.delegate = reconnectScreen;
     [reconnectScreen.navigationController popToRootViewControllerAnimated:YES];
-//    [self.navigationController popToViewController:reconnectScreen animated:YES];
-
-    
 }
--(void) bleDidUpdateRSSI:(NSNumber *) rssi
+/* RFduinoDelegate */
+- (void)didReceive:(NSData *)data;
 {
-    // No reason to update
+    NSLog(@"Received the datas");
+    //convert to x,y,z axis and feed into other methods
 }
 
--(void) setBleRadio: (RBL_BLE *) value forDevice: (NSUUID *) identifier from:(UIViewController *) connectScreen
+-(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen
 {
     bluetooth = value;
-    toyIdentifier = identifier;
-    sensibot = [bluetooth.sensibots objectForKey:toyIdentifier];
     reconnectScreen = connectScreen;
-    bluetooth.detail_delegate = self;
-    connected = YES;
+    bluetooth.delegate = self;
 }
 
 @end

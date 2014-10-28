@@ -11,10 +11,12 @@
 #import "ConnectViewController.h"
 #import "RBL_BLE.h"
 #import "RBL_BLE_Delegate.h"
+#import "RFduino.h"
+#import "RFduinoManager.h"
 
-@interface HelloScene : SKScene <RBL_BLE_Delegate>
+@interface HelloScene : SKScene <RFduinoManagerDelegate, RFduinoDelegate>
 @property BOOL contentCreated;
 
--(void) setBleRadio: (RBL_BLE *) value forDevice: (NSUUID *) identifier from:(UIViewController *) connectScreen;
+-(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen;
 
 @end
