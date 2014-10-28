@@ -10,6 +10,8 @@
 		4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FED018E75ACC009E4CDB /* SensiBot.m */; };
 		4806FED918E75CA2009E4CDB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4806FED818E75CA2009E4CDB /* CoreBluetooth.framework */; };
 		4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */; };
+		4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311719FFDBA2009EEA35 /* RFduino.m */; };
+		4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311A19FFDBA2009EEA35 /* RfduinoManager.m */; };
 		4835F9EA18E73129001DD556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9E918E73129001DD556 /* Foundation.framework */; };
 		4835F9EC18E73129001DD556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9EB18E73129001DD556 /* CoreGraphics.framework */; };
 		4835F9EE18E73129001DD556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9ED18E73129001DD556 /* UIKit.framework */; };
@@ -53,6 +55,12 @@
 		4806FEDC18E75CDE009E4CDB /* RBL_BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE.h; sourceTree = "<group>"; };
 		4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBL_BLE.m; sourceTree = "<group>"; };
 		4806FEDE18E75CDE009E4CDB /* RBL_BLE_Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE_Delegate.h; sourceTree = "<group>"; };
+		4830311619FFDBA2009EEA35 /* RFduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduino.h; sourceTree = "<group>"; };
+		4830311719FFDBA2009EEA35 /* RFduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFduino.m; sourceTree = "<group>"; };
+		4830311819FFDBA2009EEA35 /* RFduinoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoDelegate.h; sourceTree = "<group>"; };
+		4830311919FFDBA2009EEA35 /* RfduinoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfduinoManager.h; sourceTree = "<group>"; };
+		4830311A19FFDBA2009EEA35 /* RfduinoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfduinoManager.m; sourceTree = "<group>"; };
+		4830311B19FFDBA2009EEA35 /* RFduinoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoManagerDelegate.h; sourceTree = "<group>"; };
 		4835F9E618E73129001DD556 /* ToTheMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToTheMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4835F9E918E73129001DD556 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4835F9EB18E73129001DD556 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +140,19 @@
 			name = RBL_BLE;
 			sourceTree = "<group>";
 		};
+		4830311519FFDB7D009EEA35 /* RFDuino */ = {
+			isa = PBXGroup;
+			children = (
+				4830311619FFDBA2009EEA35 /* RFduino.h */,
+				4830311719FFDBA2009EEA35 /* RFduino.m */,
+				4830311819FFDBA2009EEA35 /* RFduinoDelegate.h */,
+				4830311919FFDBA2009EEA35 /* RfduinoManager.h */,
+				4830311A19FFDBA2009EEA35 /* RfduinoManager.m */,
+				4830311B19FFDBA2009EEA35 /* RFduinoManagerDelegate.h */,
+			);
+			name = RFDuino;
+			sourceTree = "<group>";
+		};
 		4835F9DD18E73129001DD556 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4847704218F226FD00E5FF5B /* Graphics */,
+				4830311519FFDB7D009EEA35 /* RFDuino */,
 				4806FEDA18E75CCC009E4CDB /* RBL_BLE */,
 				4806FECE18E75A7D009E4CDB /* SensiBots */,
 				4835F9F818E73129001DD556 /* AppDelegate.h */,
@@ -335,7 +357,9 @@
 				4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */,
 				489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */,
 				4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */,
+				4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */,
 				4835FA2218E73751001DD556 /* HelloScene.m in Sources */,
+				4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */,
 				4835F9FA18E73129001DD556 /* AppDelegate.m in Sources */,
 				4835F9F618E73129001DD556 /* main.m in Sources */,
 			);
