@@ -18,6 +18,7 @@
     BOOL connected;
     SKSpriteNode *hull;
     AccelPoint xyz;
+    SKLabelNode *score;
 }
 
 -(void)didMoveToView:(SKView *)view
@@ -43,8 +44,9 @@
     
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    //[self addChild: [self newHelloNode]];
     [self addChild: [self newBackground]];
+    score = [self newHelloNode];
+    [self addChild: score];
     
     SKSpriteNode *spaceship = [self newSpaceShip];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-150);
@@ -60,9 +62,9 @@
 {
     SKLabelNode *helloNode = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     helloNode.name = @"helloNode";
-    helloNode.text = @"Hi, Everybody!";
+    helloNode.text = @"Time 00000000";
     helloNode.fontSize = 42;
-    helloNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    helloNode.position = CGPointMake(200, 975);
     return helloNode;
 }
 
