@@ -35,6 +35,7 @@
 		489B8F7B196C9DC100EF281C /* avatar_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F79196C9DC100EF281C /* avatar_off.png */; };
 		489B8F7C196C9DC100EF281C /* avatar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F7A196C9DC100EF281C /* avatar_on.png */; };
 		489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F7E196D8D6600EF281C /* ConnectViewController.m */; };
+		48BE6FA61A00319800A986CA /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE6FA51A00319800A986CA /* Controller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		489B8F7A196C9DC100EF281C /* avatar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_on.png; sourceTree = "<group>"; };
 		489B8F7D196D8D6600EF281C /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		489B8F7E196D8D6600EF281C /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		48BE6FA41A00319800A986CA /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		48BE6FA51A00319800A986CA /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 			children = (
 				4806FED018E75ACC009E4CDB /* SensiBot.m */,
 				4806FECF18E75AC4009E4CDB /* SensiBot.h */,
+				48BE6FA41A00319800A986CA /* Controller.h */,
+				48BE6FA51A00319800A986CA /* Controller.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */,
 				4835FA0018E73129001DD556 /* ViewController.m in Sources */,
 				4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */,
+				48BE6FA61A00319800A986CA /* Controller.m in Sources */,
 				489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */,
 				4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */,
 				4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */,

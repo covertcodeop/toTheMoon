@@ -52,7 +52,7 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
  
- //[segue.destinationViewController setBleRadio:bluetooth forDevice:toyIdentifier from:self];
+ [segue.destinationViewController setBleRadio:rfduinoManager from:self];
 }
 
 - (IBAction)connectBot:(id)sender

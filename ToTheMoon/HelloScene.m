@@ -9,7 +9,7 @@
 #import "HelloScene.h"
 #import "SpaceShipScene.h"
 #import "RBL_BLE.h"
-#import "SensiBot.h"
+#import "Controller.h"
 
 @implementation HelloScene
 {
@@ -30,12 +30,16 @@
 
 -(void)createSceneContents
 {
-/*    if(sensibot != nil)
+    if(bluetooth.rfduinos[0] != nil)
     {
-        [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleProx:NO];
-        [[bluetooth.sensibots objectForKey:[[NSUUID alloc] initWithUUIDString:@SPACE_SHIP_BOT]] toggleAccelerometer:YES];
+        NSLog(@"Sending commands to controller");
+        [Controller buzzer:bluetooth.rfduinos[0]];
+        [Controller hapticShock:bluetooth.rfduinos[0]];
+        RFduino *rfd = bluetooth.rfduinos[0];
+        rfd.delegate = self;
+        [Controller toggleAccel:bluetooth.rfduinos[0] enable:YES];
     }
-*/    
+    
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     //[self addChild: [self newHelloNode]];
@@ -210,6 +214,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 {
     NSLog(@"Received the datas");
     //convert to x,y,z axis and feed into other methods
+    AccelPoint xyz = [Controller parseDatas:data];
 }
 
 -(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen
