@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "RFduino.h"
 
+struct AccelPoint { BOOL ready; CGFloat x; CGFloat y; CGFloat z; }; typedef struct AccelPoint AccelPoint;
+
 @interface Controller : NSObject
 
-struct AccelPoint { CGFloat x; CGFloat y; CGFloat z; }; typedef struct AccelPoint AccelPoint;
 
 +(void) buzzer: (RFduino *) controller;
 +(void) hapticShock: (RFduino *) controller;

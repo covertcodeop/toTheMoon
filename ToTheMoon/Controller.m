@@ -41,14 +41,40 @@
 +(AccelPoint) parseDatas: (NSData *) rawDatas
 {
     NSLog(@"Datas length %lu", (unsigned long)[rawDatas length]);
-//    dataFloat(rawDatas);
-    
-//    value = buffer[header+2] | buffer[header+1] << 8;
 
-    AccelPoint x;
-    x.x = 0;
-    x.y = 1;
-    x.z = 2;
-    return x;
+    static unsigned int step = 0;
+    static AccelPoint xyz;
+    // may be losing bytes when sending too quickly
+    //if([rawDatas length] == 1)
+    //    step = 0;
+    if((step%4) != 0 && [rawDatas length] == 1)
+    {
+        step = 1;
+        xyz.ready = NO;
+        return xyz;
+    }
+    
+    if (step%4 == 1)
+    {
+        xyz.ready = NO;
+        xyz.x = dataFloat(rawDatas);
+    }
+    else if (step%4 == 2)
+    {
+        xyz.ready = NO;
+        xyz.y = dataFloat(rawDatas);
+    }
+    else if (step%4 == 3)
+    {
+        xyz.ready = NO;
+        xyz.z = dataFloat(rawDatas);
+    }
+    else if(step%4 == 0)
+    {
+        xyz.ready = YES;
+    }
+    step++;
+
+    return xyz;
 }
 @end

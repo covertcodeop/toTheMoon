@@ -17,6 +17,7 @@
     UIViewController *reconnectScreen;
     BOOL connected;
     SKSpriteNode *hull;
+    AccelPoint xyz;
 }
 
 -(void)didMoveToView:(SKView *)view
@@ -163,9 +164,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     {
         SKAction *hover;
         //move hull based on accel
-        /*if(sensibot.accelY > 35)
+        if(xyz.y > 0)
         {
-            if(!(hull.position.x > 748))
+            if(hull.position.x > 5)
             {
                 NSLog(@"#############################################");
                 hover = [SKAction moveByX:-5 y:0.0 duration:0.1];
@@ -173,14 +174,13 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
         }
         else
         {
-            if(!(hull.position.x < 5))
+            if(hull.position.x < 720)
             {
                 NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 hover = [SKAction moveByX:5 y:0.0 duration:0.1];
             }
         }
         [hull runAction: hover];
-        */
     }
 }
 
@@ -214,7 +214,12 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 {
     NSLog(@"Received the datas");
     //convert to x,y,z axis and feed into other methods
-    AccelPoint xyz = [Controller parseDatas:data];
+    AccelPoint temp = [Controller parseDatas:data];
+    if(temp.ready)
+    {
+        xyz = temp;
+        NSLog(@"X, Y, Z: %f, %f, %f", xyz.x, xyz.y, xyz.z);
+    }
 }
 
 -(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen
