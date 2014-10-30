@@ -35,6 +35,7 @@
 		489B8F7B196C9DC100EF281C /* avatar_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F79196C9DC100EF281C /* avatar_off.png */; };
 		489B8F7C196C9DC100EF281C /* avatar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F7A196C9DC100EF281C /* avatar_on.png */; };
 		489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F7E196D8D6600EF281C /* ConnectViewController.m */; };
+		48B224F41A0166A700273F8A /* Dimbo Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48B224F31A0166A700273F8A /* Dimbo Regular.ttf */; };
 		48BE6FA61A00319800A986CA /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE6FA51A00319800A986CA /* Controller.m */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		489B8F7A196C9DC100EF281C /* avatar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_on.png; sourceTree = "<group>"; };
 		489B8F7D196D8D6600EF281C /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		489B8F7E196D8D6600EF281C /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		48B224F31A0166A700273F8A /* Dimbo Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dimbo Regular.ttf"; sourceTree = "<group>"; };
 		48BE6FA41A00319800A986CA /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		48BE6FA51A00319800A986CA /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 		4835F9F018E73129001DD556 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48B224F31A0166A700273F8A /* Dimbo Regular.ttf */,
 				4835F9F118E73129001DD556 /* ToTheMoon-Info.plist */,
 				4835F9F218E73129001DD556 /* InfoPlist.strings */,
 				4835F9F518E73129001DD556 /* main.m */,
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4835FA0218E73129001DD556 /* Images.xcassets in Resources */,
+				48B224F41A0166A700273F8A /* Dimbo Regular.ttf in Resources */,
 				4847704618F22B3300E5FF5B /* ship.png in Resources */,
 				487098E7198182AE00469723 /* ship_asteroid.png in Resources */,
 				4835F9F418E73129001DD556 /* InfoPlist.strings in Resources */,

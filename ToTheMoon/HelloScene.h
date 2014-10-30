@@ -14,7 +14,10 @@
 #import "RFduino.h"
 #import "RFduinoManager.h"
 
-@interface HelloScene : SKScene <RFduinoManagerDelegate, RFduinoDelegate>
+static const int spaceShipCategory = 1;
+static const int meteoriteCategory = 2;
+
+@interface HelloScene : SKScene <RFduinoManagerDelegate, RFduinoDelegate, SKPhysicsContactDelegate>
 @property BOOL contentCreated;
 
 -(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen;

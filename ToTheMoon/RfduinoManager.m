@@ -195,6 +195,7 @@ static CBUUID *service_uuid;
         cancelBlock = block;
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+        NSLog(@"Peripheral disconnected withe error %@", error.description);
         /* UIAlertView is deprecated in iOS 8.0, need to update: https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Peripheral Disconnected with Error"
