@@ -20,6 +20,7 @@
 {
     RFduinoManager *rfduinoManager;
     BOOL controllerConnected;
+    RFduino *theController;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +40,13 @@
     controllerConnected = NO;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"Connect appearing");
+    [self.connectButton setImage: [UIImage imageNamed:@"avatar_off.png"] forState:UIControlStateNormal];
+    controllerConnected = NO;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -52,7 +60,7 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
  
- [segue.destinationViewController setBleRadio:rfduinoManager from:self];
+    [segue.destinationViewController setBleRadio:rfduinoManager withController:theController from:self];
 }
 
 - (IBAction)connectBot:(id)sender
@@ -83,7 +91,7 @@
 {
     NSString *adData = [[NSString alloc] initWithData:rfduino.advertisementData encoding:NSASCIIStringEncoding];
     NSLog(@"Found RFduino %@ - %@", rfduino.name, adData);
-    if([rfduino.name isEqualToString:@"DynePod"] &&  [adData isEqualToString:@"SSC"])
+    if([rfduino.name isEqualToString:@"DynePod"] &&  [adData isEqualToString:@"001"])
     {
         NSLog(@"Controller UUID %@", rfduino.UUID);
         [rfduinoManager connectRFduino:rfduino];
@@ -99,6 +107,7 @@
 }
 - (void)didLoadServiceRFduino:(RFduino *)rfduino
 {
+    theController = rfduino;
     NSLog(@"Controller joining!");
     controllerConnected = YES;
     [self.connectButton setImage: [UIImage imageNamed:@"avatar_on.png"] forState:UIControlStateNormal];

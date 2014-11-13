@@ -13,6 +13,6 @@
 
 @interface ViewController : UIViewController
 
--(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen;
+-(void) setBleRadio: (RFduinoManager *) value withController: (RFduino *) rfduino from:(UIViewController *) connectScreen;
 
 @end

@@ -20,6 +20,6 @@ static const int meteoriteCategory = 2;
 @interface HelloScene : SKScene <RFduinoManagerDelegate, RFduinoDelegate, SKPhysicsContactDelegate>
 @property BOOL contentCreated;
 
--(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen;
+-(void) setBleRadio: (RFduinoManager *) value withController: (RFduino *) rfduino from:(UIViewController *) connectScreen;
 
 @end

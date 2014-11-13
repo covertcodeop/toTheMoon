@@ -14,6 +14,7 @@
 @implementation HelloScene
 {
     RFduinoManager *bluetooth;
+    RFduino *controller;
     UIViewController *reconnectScreen;
     BOOL connected;
     SKSpriteNode *hull;
@@ -34,16 +35,18 @@
 
 -(void)createSceneContents
 {
-    if(bluetooth.rfduinos[0] != nil)
+    if(controller != nil && controller.loadedService)
     {
+        controller.delegate = self;
         NSLog(@"Sending commands to controller");
-        [Controller buzzer:bluetooth.rfduinos[0]];
-        [Controller hapticShock:bluetooth.rfduinos[0]];
-        RFduino *rfd = bluetooth.rfduinos[0];
-        rfd.delegate = self;
-        [Controller toggleAccel:bluetooth.rfduinos[0] enable:YES];
+        [Controller buzzer:controller];
+        [Controller hapticShock:controller];
+        [Controller toggleAccel:controller enable:YES];
     }
-    
+    else
+    {
+        [reconnectScreen.navigationController popToRootViewControllerAnimated:YES];
+    }
     self.physicsWorld.contactDelegate = self;
     self.backgroundColor = [SKColor blueColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
@@ -248,7 +251,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     NSString *formatted_score = [[NSString alloc] initWithFormat:@"Time %08i", 0];
     score.text = formatted_score;
     start_time = [NSDate date];
-    [Controller buzzer:bluetooth.rfduinos[0]];
+    [Controller buzzer:controller];
 //    SKPhysicsBody *firstBody, *secondBody;
 //    firstBody = contact.bodyA;
 //    secondBody = contact.bodyB;
@@ -259,11 +262,12 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
     NSLog(@"End contact ######################################################################################");
 }
 
--(void) setBleRadio: (RFduinoManager *) value from:(UIViewController *) connectScreen
+-(void) setBleRadio: (RFduinoManager *) value withController: (RFduino *) rfduino from:(UIViewController *) connectScreen;
 {
     bluetooth = value;
-    reconnectScreen = connectScreen;
     bluetooth.delegate = self;
+    controller = rfduino;
+    reconnectScreen = connectScreen;
 }
 
 @end

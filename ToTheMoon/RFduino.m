@@ -65,12 +65,12 @@ float dataFloat(NSData *data)
 {
     CBCharacteristic *send_characteristic;
     CBCharacteristic *disconnect_characteristic;
-    bool loadedService;
 }
 @end
 
 @implementation RFduino
 
+@synthesize loadedService;
 @synthesize delegate;
 @synthesize rfduinoManager;
 @synthesize peripheral;

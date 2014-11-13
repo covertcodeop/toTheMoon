@@ -45,6 +45,8 @@ float dataFloat(NSData *data);
 {
 }
 
+@property(readonly) BOOL loadedService;
+
 @property(assign, nonatomic) id<RFduinoDelegate> delegate;
 
 @property(strong, nonatomic) CBPeripheral *peripheral;
