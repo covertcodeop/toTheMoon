@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FED018E75ACC009E4CDB /* SensiBot.m */; };
 		4806FED918E75CA2009E4CDB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4806FED818E75CA2009E4CDB /* CoreBluetooth.framework */; };
-		4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */; };
 		4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311719FFDBA2009EEA35 /* RFduino.m */; };
 		4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311A19FFDBA2009EEA35 /* RfduinoManager.m */; };
 		4835F9EA18E73129001DD556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9E918E73129001DD556 /* Foundation.framework */; };
@@ -50,13 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4806FECF18E75AC4009E4CDB /* SensiBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensiBot.h; sourceTree = "<group>"; };
-		4806FED018E75ACC009E4CDB /* SensiBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensiBot.m; sourceTree = "<group>"; };
 		4806FED818E75CA2009E4CDB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		4806FEDB18E75CDE009E4CDB /* RBL_BLE_Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE_Defines.h; sourceTree = "<group>"; };
-		4806FEDC18E75CDE009E4CDB /* RBL_BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE.h; sourceTree = "<group>"; };
-		4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBL_BLE.m; sourceTree = "<group>"; };
-		4806FEDE18E75CDE009E4CDB /* RBL_BLE_Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE_Delegate.h; sourceTree = "<group>"; };
 		4830311619FFDBA2009EEA35 /* RFduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduino.h; sourceTree = "<group>"; };
 		4830311719FFDBA2009EEA35 /* RFduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFduino.m; sourceTree = "<group>"; };
 		4830311819FFDBA2009EEA35 /* RFduinoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoDelegate.h; sourceTree = "<group>"; };
@@ -128,23 +120,10 @@
 		4806FECE18E75A7D009E4CDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4806FED018E75ACC009E4CDB /* SensiBot.m */,
-				4806FECF18E75AC4009E4CDB /* SensiBot.h */,
 				48BE6FA41A00319800A986CA /* Controller.h */,
 				48BE6FA51A00319800A986CA /* Controller.m */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		4806FEDA18E75CCC009E4CDB /* RBL_BLE */ = {
-			isa = PBXGroup;
-			children = (
-				4806FEDB18E75CDE009E4CDB /* RBL_BLE_Defines.h */,
-				4806FEDC18E75CDE009E4CDB /* RBL_BLE.h */,
-				4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */,
-				4806FEDE18E75CDE009E4CDB /* RBL_BLE_Delegate.h */,
-			);
-			name = RBL_BLE;
 			sourceTree = "<group>";
 		};
 		4830311519FFDB7D009EEA35 /* RFDuino */ = {
@@ -197,7 +176,6 @@
 			children = (
 				4847704218F226FD00E5FF5B /* Graphics */,
 				4830311519FFDB7D009EEA35 /* RFDuino */,
-				4806FEDA18E75CCC009E4CDB /* RBL_BLE */,
 				4806FECE18E75A7D009E4CDB /* Controller */,
 				4835F9F818E73129001DD556 /* AppDelegate.h */,
 				4835F9F918E73129001DD556 /* AppDelegate.m */,
@@ -361,12 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */,
 				4835FA0018E73129001DD556 /* ViewController.m in Sources */,
 				4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */,
 				48BE6FA61A00319800A986CA /* Controller.m in Sources */,
 				489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */,
-				4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */,
 				4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */,
 				4835FA2218E73751001DD556 /* HelloScene.m in Sources */,
 				4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */,

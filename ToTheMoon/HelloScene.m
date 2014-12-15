@@ -123,12 +123,6 @@
     hull.physicsBody.contactTestBitMask = meteoriteCategory;
     hull.physicsBody.collisionBitMask = meteoriteCategory;
     
-    SKAction *hover = [SKAction sequence:@[[SKAction waitForDuration: 1.0],
-                                           [SKAction moveByX:100 y:50.0 duration:1.0],
-                                           [SKAction waitForDuration: 1.0],
-                                           [SKAction moveByX:-100.0 y:-50.0 duration:1.0]]];
-    
-    //[hull runAction: [SKAction repeatActionForever:hover]];
     return hull;
 }
 
@@ -227,7 +221,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high)
 {
     NSLog(@"Controller disconnected");
     rfduino.delegate = nil;
-    bluetooth.delegate = reconnectScreen;
+    bluetooth.delegate = nil;
     [reconnectScreen.navigationController popToRootViewControllerAnimated:YES];
 }
 /* RFduinoDelegate */
