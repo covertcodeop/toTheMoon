@@ -1,3 +1,17 @@
+###########
+#ToTheMoon#
+###########
+
+An iOS app demonstrating the ability to use a BLE device with accelerometer
+to control a spaceship. Currently the project is using the RfDuino
+framework. SpriteKit is used for the game graphics and physics.
+
+Controller.h/m holds the static class for the BLE device acting as a
+controller
+
+ViewController holds the game scene.
+
+-------------------------------------------------------------------------
 I have sacrificed time, health, and fortune, in the desire to complete these
 Calculating Engines.  I have also declined several offers of great personal
 advantage to myself.  But, notwithstanding the sacrifice of these advantages
