@@ -177,13 +177,10 @@
 				4847704218F226FD00E5FF5B /* Graphics */,
 				4830311519FFDB7D009EEA35 /* RFDuino */,
 				4806FECE18E75A7D009E4CDB /* Controller */,
+				486A64211A3E715900D5C186 /* Views */,
 				4835F9F818E73129001DD556 /* AppDelegate.h */,
 				4835F9F918E73129001DD556 /* AppDelegate.m */,
 				4835F9FB18E73129001DD556 /* Main.storyboard */,
-				489B8F7D196D8D6600EF281C /* ConnectViewController.h */,
-				489B8F7E196D8D6600EF281C /* ConnectViewController.m */,
-				4835F9FE18E73129001DD556 /* ViewController.h */,
-				4835F9FF18E73129001DD556 /* ViewController.m */,
 				4835FA2018E73751001DD556 /* HelloScene.h */,
 				4835FA2118E73751001DD556 /* HelloScene.m */,
 				4835FA2318E73F76001DD556 /* SpaceShipScene.h */,
@@ -234,6 +231,17 @@
 				4847704318F2273600E5FF5B /* bg.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		486A64211A3E715900D5C186 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				489B8F7D196D8D6600EF281C /* ConnectViewController.h */,
+				489B8F7E196D8D6600EF281C /* ConnectViewController.m */,
+				4835F9FE18E73129001DD556 /* ViewController.h */,
+				4835F9FF18E73129001DD556 /* ViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
