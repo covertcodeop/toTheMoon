@@ -15,6 +15,9 @@
 
 @implementation ViewController
 {
+    RFduinoManager *bluetooth;
+    RFduino *controller;
+    UIViewController *reconnectScreen;
 }
 - (void)viewDidLoad
 {
@@ -35,9 +38,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     HelloScene *hello = [[HelloScene alloc] initWithSize:CGSizeMake(768, 1024)];
+    [hello setBleRadio:bluetooth withController:controller from:reconnectScreen];
     SKView *spriteView = (SKView *) self.view;
     
     [spriteView presentScene: hello];
+}
+
+-(void) setBleRadio: (RFduinoManager *) value withController: (RFduino *) rfduino from:(UIViewController *) connectScreen;
+{
+    bluetooth = value;
+    reconnectScreen = connectScreen;
+    controller = rfduino;
 }
 
 @end

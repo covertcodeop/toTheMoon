@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FED018E75ACC009E4CDB /* SensiBot.m */; };
 		4806FED918E75CA2009E4CDB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4806FED818E75CA2009E4CDB /* CoreBluetooth.framework */; };
-		4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */; };
+		4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311719FFDBA2009EEA35 /* RFduino.m */; };
+		4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4830311A19FFDBA2009EEA35 /* RfduinoManager.m */; };
 		4835F9EA18E73129001DD556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9E918E73129001DD556 /* Foundation.framework */; };
 		4835F9EC18E73129001DD556 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9EB18E73129001DD556 /* CoreGraphics.framework */; };
 		4835F9EE18E73129001DD556 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4835F9ED18E73129001DD556 /* UIKit.framework */; };
@@ -29,6 +29,12 @@
 		4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4835FA2418E73F76001DD556 /* SpaceShipScene.m */; };
 		4847704418F2273600E5FF5B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704318F2273600E5FF5B /* bg.png */; };
 		4847704618F22B3300E5FF5B /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 4847704518F22B3300E5FF5B /* ship.png */; };
+		487098E7198182AE00469723 /* ship_asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 487098E6198182AE00469723 /* ship_asteroid.png */; };
+		489B8F7B196C9DC100EF281C /* avatar_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F79196C9DC100EF281C /* avatar_off.png */; };
+		489B8F7C196C9DC100EF281C /* avatar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 489B8F7A196C9DC100EF281C /* avatar_on.png */; };
+		489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F7E196D8D6600EF281C /* ConnectViewController.m */; };
+		48B224F41A0166A700273F8A /* Dimbo Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48B224F31A0166A700273F8A /* Dimbo Regular.ttf */; };
+		48BE6FA61A00319800A986CA /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BE6FA51A00319800A986CA /* Controller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4806FECF18E75AC4009E4CDB /* SensiBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensiBot.h; sourceTree = "<group>"; };
-		4806FED018E75ACC009E4CDB /* SensiBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensiBot.m; sourceTree = "<group>"; };
 		4806FED818E75CA2009E4CDB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		4806FEDB18E75CDE009E4CDB /* RBL_BLE_Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE_Defines.h; sourceTree = "<group>"; };
-		4806FEDC18E75CDE009E4CDB /* RBL_BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE.h; sourceTree = "<group>"; };
-		4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBL_BLE.m; sourceTree = "<group>"; };
-		4806FEDE18E75CDE009E4CDB /* RBL_BLE_Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBL_BLE_Delegate.h; sourceTree = "<group>"; };
+		4830311619FFDBA2009EEA35 /* RFduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduino.h; sourceTree = "<group>"; };
+		4830311719FFDBA2009EEA35 /* RFduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFduino.m; sourceTree = "<group>"; };
+		4830311819FFDBA2009EEA35 /* RFduinoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoDelegate.h; sourceTree = "<group>"; };
+		4830311919FFDBA2009EEA35 /* RfduinoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfduinoManager.h; sourceTree = "<group>"; };
+		4830311A19FFDBA2009EEA35 /* RfduinoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfduinoManager.m; sourceTree = "<group>"; };
+		4830311B19FFDBA2009EEA35 /* RFduinoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoManagerDelegate.h; sourceTree = "<group>"; };
 		4835F9E618E73129001DD556 /* ToTheMoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToTheMoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4835F9E918E73129001DD556 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4835F9EB18E73129001DD556 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +81,14 @@
 		4835FA2418E73F76001DD556 /* SpaceShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceShipScene.m; sourceTree = "<group>"; };
 		4847704318F2273600E5FF5B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		4847704518F22B3300E5FF5B /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship.png; sourceTree = "<group>"; };
+		487098E6198182AE00469723 /* ship_asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship_asteroid.png; sourceTree = "<group>"; };
+		489B8F79196C9DC100EF281C /* avatar_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_off.png; sourceTree = "<group>"; };
+		489B8F7A196C9DC100EF281C /* avatar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_on.png; sourceTree = "<group>"; };
+		489B8F7D196D8D6600EF281C /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		489B8F7E196D8D6600EF281C /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		48B224F31A0166A700273F8A /* Dimbo Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dimbo Regular.ttf"; sourceTree = "<group>"; };
+		48BE6FA41A00319800A986CA /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		48BE6FA51A00319800A986CA /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,24 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4806FECE18E75A7D009E4CDB /* SensiBots */ = {
+		4806FECE18E75A7D009E4CDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4806FED018E75ACC009E4CDB /* SensiBot.m */,
-				4806FECF18E75AC4009E4CDB /* SensiBot.h */,
+				48BE6FA41A00319800A986CA /* Controller.h */,
+				48BE6FA51A00319800A986CA /* Controller.m */,
 			);
-			name = SensiBots;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		4806FEDA18E75CCC009E4CDB /* RBL_BLE */ = {
+		4830311519FFDB7D009EEA35 /* RFDuino */ = {
 			isa = PBXGroup;
 			children = (
-				4806FEDB18E75CDE009E4CDB /* RBL_BLE_Defines.h */,
-				4806FEDC18E75CDE009E4CDB /* RBL_BLE.h */,
-				4806FEDD18E75CDE009E4CDB /* RBL_BLE.m */,
-				4806FEDE18E75CDE009E4CDB /* RBL_BLE_Delegate.h */,
+				4830311619FFDBA2009EEA35 /* RFduino.h */,
+				4830311719FFDBA2009EEA35 /* RFduino.m */,
+				4830311819FFDBA2009EEA35 /* RFduinoDelegate.h */,
+				4830311919FFDBA2009EEA35 /* RfduinoManager.h */,
+				4830311A19FFDBA2009EEA35 /* RfduinoManager.m */,
+				4830311B19FFDBA2009EEA35 /* RFduinoManagerDelegate.h */,
 			);
-			name = RBL_BLE;
+			name = RFDuino;
 			sourceTree = "<group>";
 		};
 		4835F9DD18E73129001DD556 = {
@@ -159,13 +175,12 @@
 			isa = PBXGroup;
 			children = (
 				4847704218F226FD00E5FF5B /* Graphics */,
-				4806FEDA18E75CCC009E4CDB /* RBL_BLE */,
-				4806FECE18E75A7D009E4CDB /* SensiBots */,
+				4830311519FFDB7D009EEA35 /* RFDuino */,
+				4806FECE18E75A7D009E4CDB /* Controller */,
+				486A64211A3E715900D5C186 /* Views */,
 				4835F9F818E73129001DD556 /* AppDelegate.h */,
 				4835F9F918E73129001DD556 /* AppDelegate.m */,
 				4835F9FB18E73129001DD556 /* Main.storyboard */,
-				4835F9FE18E73129001DD556 /* ViewController.h */,
-				4835F9FF18E73129001DD556 /* ViewController.m */,
 				4835FA2018E73751001DD556 /* HelloScene.h */,
 				4835FA2118E73751001DD556 /* HelloScene.m */,
 				4835FA2318E73F76001DD556 /* SpaceShipScene.h */,
@@ -179,6 +194,7 @@
 		4835F9F018E73129001DD556 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48B224F31A0166A700273F8A /* Dimbo Regular.ttf */,
 				4835F9F118E73129001DD556 /* ToTheMoon-Info.plist */,
 				4835F9F218E73129001DD556 /* InfoPlist.strings */,
 				4835F9F518E73129001DD556 /* main.m */,
@@ -208,10 +224,24 @@
 		4847704218F226FD00E5FF5B /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				487098E6198182AE00469723 /* ship_asteroid.png */,
+				489B8F79196C9DC100EF281C /* avatar_off.png */,
+				489B8F7A196C9DC100EF281C /* avatar_on.png */,
 				4847704518F22B3300E5FF5B /* ship.png */,
 				4847704318F2273600E5FF5B /* bg.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		486A64211A3E715900D5C186 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				489B8F7D196D8D6600EF281C /* ConnectViewController.h */,
+				489B8F7E196D8D6600EF281C /* ConnectViewController.m */,
+				4835F9FE18E73129001DD556 /* ViewController.h */,
+				4835F9FF18E73129001DD556 /* ViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4835FA0218E73129001DD556 /* Images.xcassets in Resources */,
+				48B224F41A0166A700273F8A /* Dimbo Regular.ttf in Resources */,
 				4847704618F22B3300E5FF5B /* ship.png in Resources */,
+				487098E7198182AE00469723 /* ship_asteroid.png in Resources */,
 				4835F9F418E73129001DD556 /* InfoPlist.strings in Resources */,
 				4847704418F2273600E5FF5B /* bg.png in Resources */,
+				489B8F7C196C9DC100EF281C /* avatar_on.png in Resources */,
+				489B8F7B196C9DC100EF281C /* avatar_off.png in Resources */,
 				4835F9FD18E73129001DD556 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,11 +347,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4806FEDF18E75CDE009E4CDB /* RBL_BLE.m in Sources */,
 				4835FA0018E73129001DD556 /* ViewController.m in Sources */,
 				4835FA2518E73F76001DD556 /* SpaceShipScene.m in Sources */,
-				4806FED118E75ACC009E4CDB /* SensiBot.m in Sources */,
+				48BE6FA61A00319800A986CA /* Controller.m in Sources */,
+				489B8F7F196D8D6600EF281C /* ConnectViewController.m in Sources */,
+				4830311D19FFDBA2009EEA35 /* RfduinoManager.m in Sources */,
 				4835FA2218E73751001DD556 /* HelloScene.m in Sources */,
+				4830311C19FFDBA2009EEA35 /* RFduino.m in Sources */,
 				4835F9FA18E73129001DD556 /* AppDelegate.m in Sources */,
 				4835F9F618E73129001DD556 /* main.m in Sources */,
 			);

@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "RBL_BLE_Delegate.h"
+#import "ConnectViewController.h"
+#import "RFduino.h"
+#import "RFduinoManager.h"
 
-@interface HelloScene : SKScene <RBL_BLE_Delegate>
+static const int spaceShipCategory = 1;
+static const int meteoriteCategory = 2;
+
+@interface HelloScene : SKScene <RFduinoManagerDelegate, RFduinoDelegate, SKPhysicsContactDelegate>
 @property BOOL contentCreated;
+
+-(void) setBleRadio: (RFduinoManager *) value withController: (RFduino *) rfduino from:(UIViewController *) connectScreen;
+
 @end
