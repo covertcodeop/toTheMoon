@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "RBL_BLE.h"
 #import "RFduinoManager.h"
 
 @interface ViewController : UIViewController

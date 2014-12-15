@@ -8,8 +8,6 @@
 
 #import "ConnectViewController.h"
 #import "ViewController.h"
-#import "RBL_BLE.h"
-#import "SensiBot.h"
 
 @interface ConnectViewController ()
 - (IBAction)connectBot:(id)sender;

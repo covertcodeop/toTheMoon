@@ -8,7 +8,6 @@
 
 #import "HelloScene.h"
 #import "SpaceShipScene.h"
-#import "RBL_BLE.h"
 #import "Controller.h"
 
 @implementation HelloScene

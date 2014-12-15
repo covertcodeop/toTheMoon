@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "ConnectViewController.h"
-#import "RBL_BLE.h"
-#import "RBL_BLE_Delegate.h"
 #import "RFduino.h"
 #import "RFduinoManager.h"
 

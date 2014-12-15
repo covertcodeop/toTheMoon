@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import "HelloScene.h"
-#import "SensiBot.h"
-#import "RBL_BLE.h"
 
 @interface ViewController ()
 
